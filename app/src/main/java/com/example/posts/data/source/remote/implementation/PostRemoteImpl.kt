@@ -6,7 +6,7 @@ import com.example.posts.data.model.mapToDomain
 import com.example.posts.domain.model.Post
 import io.reactivex.Single
 
-class PostRemoteDataSourceImpl(
+class PostRemoteImpl(
     private val api: PostsApi
 ) : PostRemote {
 

@@ -1,4 +1,4 @@
-package com.example.posts.domain.repository
+package com.example.posts.domain.repository.interfaces
 
 import com.example.posts.domain.model.User
 import io.reactivex.Single

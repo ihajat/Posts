@@ -5,8 +5,8 @@ package com.example.posts.domain.usecase
 import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
-import com.example.posts.domain.repository.PostRepository
-import com.example.posts.domain.repository.UserRepository
+import com.example.posts.domain.repository.interfaces.PostRepository
+import com.example.posts.domain.repository.interfaces.UserRepository
 import com.example.posts.post
 import com.example.posts.user
 import io.reactivex.Single

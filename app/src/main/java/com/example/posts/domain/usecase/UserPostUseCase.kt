@@ -2,8 +2,8 @@ package com.example.posts.domain.usecase
 
 import com.example.posts.domain.model.Post
 import com.example.posts.domain.model.User
-import com.example.posts.domain.repository.PostRepository
-import com.example.posts.domain.repository.UserRepository
+import com.example.posts.domain.repository.interfaces.PostRepository
+import com.example.posts.domain.repository.interfaces.UserRepository
 import io.reactivex.Single
 import io.reactivex.functions.BiFunction
 

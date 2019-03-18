@@ -2,6 +2,7 @@
 
 package com.example.posts.data.repository
 
+import com.example.posts.data.repository.implementations.UserRepositoryImpl
 import com.example.posts.user
 import com.example.posts.data.source.local.cache.interfaces.UserCache
 import com.example.posts.data.source.remote.interfaces.UserRemote

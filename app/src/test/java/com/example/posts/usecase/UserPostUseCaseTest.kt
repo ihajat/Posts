@@ -1,7 +1,7 @@
 package com.example.posts.usecase
 
-import com.example.posts.domain.repository.PostRepository
-import com.example.posts.domain.repository.UserRepository
+import com.example.posts.domain.repository.interfaces.PostRepository
+import com.example.posts.domain.repository.interfaces.UserRepository
 import com.example.posts.domain.usecase.UserPostUseCase
 import com.example.posts.domain.usecase.map
 import com.example.posts.post

@@ -6,6 +6,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import com.example.posts.comment
+import com.example.posts.data.repository.implementations.CommentRepositoryImpl
 import com.example.posts.post
 import com.example.posts.data.source.local.cache.interfaces.CommentCache
 import com.example.posts.data.source.remote.interfaces.CommentRemote
@@ -32,7 +33,8 @@ class CommentRepositoryImplTest {
 
     @Before
     fun setUp() {
-        repository = CommentRepositoryImpl(mockCache, mockRemoteDataSource)
+        repository =
+            CommentRepositoryImpl(mockCache, mockRemoteDataSource)
     }
 
     @Test

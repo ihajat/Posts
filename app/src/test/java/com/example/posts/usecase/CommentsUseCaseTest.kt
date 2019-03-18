@@ -6,7 +6,7 @@ import com.nhaarman.mockitokotlin2.mock
 import com.nhaarman.mockitokotlin2.verify
 import com.nhaarman.mockitokotlin2.whenever
 import com.example.posts.comment
-import com.example.posts.domain.repository.CommentRepository
+import com.example.posts.domain.repository.interfaces.CommentRepository
 import com.example.posts.post
 import io.reactivex.Single
 import org.junit.Before

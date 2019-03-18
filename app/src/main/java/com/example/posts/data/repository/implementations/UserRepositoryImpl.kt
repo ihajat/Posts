@@ -1,9 +1,9 @@
-package com.example.posts.data.repository
+package com.example.posts.data.repository.implementations
 
 import com.example.posts.data.source.local.cache.interfaces.UserCache
 import com.example.posts.data.source.remote.interfaces.UserRemote
 import com.example.posts.domain.model.User
-import com.example.posts.domain.repository.UserRepository
+import com.example.posts.domain.repository.interfaces.UserRepository
 import io.reactivex.Single
 
 class UserRepositoryImpl constructor(

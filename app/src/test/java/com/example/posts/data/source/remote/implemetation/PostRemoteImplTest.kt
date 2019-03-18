@@ -9,14 +9,14 @@ import com.example.posts.data.model.mapToDomain
 import com.example.posts.data.network.apis.PostsApi
 import com.example.posts.post
 import com.example.posts.postEntity
-import com.example.posts.data.source.remote.implementation.PostRemoteDataSourceImpl
+import com.example.posts.data.source.remote.implementation.PostRemoteImpl
 import io.reactivex.Single
 import org.junit.Before
 import org.junit.Test
 
-class PostRemoteDataSourceImplTest {
+class PostRemoteImplTest {
 
-    private lateinit var dataSource: PostRemoteDataSourceImpl
+    private lateinit var dataSource: PostRemoteImpl
 
     private val mockApi: PostsApi = mock()
 
@@ -30,7 +30,7 @@ class PostRemoteDataSourceImplTest {
 
     @Before
     fun setUp() {
-        dataSource = PostRemoteDataSourceImpl(mockApi)
+        dataSource = PostRemoteImpl(mockApi)
     }
 
     @Test

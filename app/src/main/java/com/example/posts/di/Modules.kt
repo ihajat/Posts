@@ -2,9 +2,9 @@ package com.example.posts.di
 
 import com.example.posts.BuildConfig
 import com.example.posts.data.network.createNetworkClient
-import com.example.posts.data.repository.CommentRepositoryImpl
-import com.example.posts.data.repository.PostRepositoryImpl
-import com.example.posts.data.repository.UserRepositoryImpl
+import com.example.posts.data.repository.implementations.CommentRepositoryImpl
+import com.example.posts.data.repository.implementations.PostRepositoryImpl
+import com.example.posts.data.repository.implementations.UserRepositoryImpl
 import com.example.posts.data.source.local.cache.implementation.CommentCacheImpl
 import com.example.posts.data.source.local.cache.implementation.PostCacheImpl
 import com.example.posts.data.cache.ReactiveCache
@@ -21,12 +21,12 @@ import com.example.posts.data.source.remote.interfaces.CommentRemote
 import com.example.posts.data.source.remote.interfaces.PostRemote
 import com.example.posts.data.source.remote.interfaces.UserRemote
 import com.example.posts.data.source.remote.implementation.CommentRemoteImpl
-import com.example.posts.data.source.remote.implementation.PostRemoteDataSourceImpl
+import com.example.posts.data.source.remote.implementation.PostRemoteImpl
 import com.example.posts.data.source.remote.implementation.UserRemoteImpl
 import com.example.posts.domain.model.Comment
-import com.example.posts.domain.repository.CommentRepository
-import com.example.posts.domain.repository.PostRepository
-import com.example.posts.domain.repository.UserRepository
+import com.example.posts.domain.repository.interfaces.CommentRepository
+import com.example.posts.domain.repository.interfaces.PostRepository
+import com.example.posts.domain.repository.interfaces.UserRepository
 import com.example.posts.domain.usecase.CommentsUseCase
 import com.example.posts.domain.usecase.UserPostUseCase
 import com.example.posts.domain.usecase.UsersPostsUseCase
@@ -65,15 +65,23 @@ val useCaseModule: Module = module {
 
 val repositoryModule: Module = module {
     single { UserRepositoryImpl(cache = get(), remote = get()) as UserRepository }
-    single { PostRepositoryImpl(cache = get(), remoteDataSource = get()) as PostRepository }
-    single { CommentRepositoryImpl(cache = get(), remoteDataSource = get()) as CommentRepository }
+    single { PostRepositoryImpl(
+        cache = get(),
+        remote = get()
+    ) as PostRepository
+    }
+    single { CommentRepositoryImpl(
+        cache = get(),
+        remote = get()
+    ) as CommentRepository
+    }
 }
 
 val dataSourceModule: Module = module {
     single { UserCacheImpl(cache = get(USER_CACHE)) as UserCache }
     single { UserRemoteImpl(api = usersApi) as UserRemote }
     single { PostCacheImpl(cache = get(POST_CACHE)) as PostCache }
-    single { PostRemoteDataSourceImpl(api = postsApi) as PostRemote }
+    single { PostRemoteImpl(api = postsApi) as PostRemote }
     single { CommentCacheImpl(cache = get(COMMENT_CACHE)) as CommentCache }
     single { CommentRemoteImpl(api = commentsApi) as CommentRemote }
 }
