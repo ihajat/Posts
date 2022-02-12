@@ -1,5 +1,6 @@
 A simple Android app that demonstrates clean code architecture. 114
 
+
 The app should have two screens, as follows:Screen 1 should contain a list of posts. Tapping on a cell in the list, should take you to the second
 screen.
 Screen 2 is the detail screen for the selected post. Details to be shown about each post are:
@@ -65,7 +66,7 @@ Notes:
 
 It serves as a middle-man between Presentation and Data layers yet it has no knowledge about either of them by virtue of Inversion of Control. So, it does NOT depend on the Data layer. This is because Use cases in Domain are not using the actual implementation of the Repository that sits in the Data Layer. Instead, it is just using an abstraction/interface in the Domain Layer that acts as a contract for any repository who wants to provide the data.
 
-Business logic (the most important aspect of your app) is centralized for a good reason: for ease of maintenance, it should not be spread across many layers or, worse, duplicated in multiple places. When it comes to updating your business rules, you should not be forced to debug the whole codebase to determine how it works?—?the Domain layer is the place to look.
+Business logic (the most important aspect of your app) is centralized for a good reason: for ease of maintenance, it should not be spread across many layers or, worse, duplicated in multiple places. When it comes to updating your business rules, you should not be forced to debug the whole codebase to determine how it works?â€”?the Domain layer is the place to look.
 
 6. We are still applying the SOLID principles , and therefore the Repositories use Interfaces for testablity.
 7. We do NOT not want to propogate the same data model throughout the whole app, rather , the concept of raw data and safe data is used, ie, each layer has its own data model.
