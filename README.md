@@ -1,5 +1,5 @@
 A simple Android app that demonstrates clean code architecture. 125 126
-new52:
+new53:
 
 The app should have two screens, as follows:Screen 1 should contain a list of posts. Tapping on a cell in the list, should take you to the second
 screen.
